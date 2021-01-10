@@ -17,7 +17,7 @@ export default {
     },
     data(){
        
-    },
+    }, 
     methods:{
         changeTitle:function(){
             // this.$emit('changeTitle', 'updated title with event')
