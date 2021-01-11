@@ -48,7 +48,7 @@ export default {
             return value.toUpperCase();
         },
         snippet(value){
-            return value.slice(0,100) + '............'
+            return value.slice(0,100) + '...'
         }
     },
 
