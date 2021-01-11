@@ -1,7 +1,7 @@
 <template>
     <div  id="show-blogs">
 
-         <h1>All Blog articles</h1>
+         <h1>List Blog Titles</h1>
          <input type="text" placeholder="Search blogs" v-model="search">
          <div class="single-blog" v-for="blog in filteredBlogs" :key="blog.index" >
                  <h2 v-rainbow>{{blog.title | to-uppercase}}</h2> 
@@ -55,7 +55,8 @@ export default {
         }
     },
     mixins:[searchMixins]
-} 
+    
+}
 </script>
 
 <style scoped>
