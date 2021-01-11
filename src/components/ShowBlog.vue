@@ -1,10 +1,9 @@
 <template>
-    <div v-theme:column="'narrow'" id="show-blogs"> <!---- custom directive v-theme------>
+    <div  id="show-blogs"> 
          <h1>All Blog articles</h1>
          <div class="single-blog" v-for="blog in blogs" :key="blog.index" >
-                 <h2 v-rainbow>Title:{{blog.title}}</h2> <!--- custom directive v-rainbow-->
-                 <p>Body:</p>
-                 <p>{{blog.body}}</p>
+                 <h2>{{blog.title | to-uppercase}}</h2> 
+                 <article>{{blog.body | snippet}}</article>
          </div>
 
    </div>
