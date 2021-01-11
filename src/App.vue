@@ -1,17 +1,20 @@
 <template>
   <div>
-    <add-blog></add-blog>
-   
+    <!-- <add-blog></add-blog> -->
+    <show-blog></show-blog>   
   </div>
     
 </template>
 
 <script>
-import AddBlog from '@/components/AddBlog'
+// import AddBlog from '@/components/AddBlog'
+import ShowBlog from './components/ShowBlog.vue'
 
 export default {
   components:{
-    'add-blog':AddBlog,
+    // 'add-blog':AddBlog,
+    'show-blog':ShowBlog,
+    
   },
   data() {
 
