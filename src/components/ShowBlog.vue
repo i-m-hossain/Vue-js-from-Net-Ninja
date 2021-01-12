@@ -5,7 +5,7 @@
          <input type="text" placeholder="Search blogs" v-model="search">
          <div class="single-blog" v-for="blog in filteredBlogs" :key="blog.index" >
                  <router-link v-bind:to="'/blog/'+blog.id"><h2 v-rainbow >{{blog.title | to-uppercase}}</h2></router-link> 
-                 <article>{{blog.body | snippet}}</article>
+                 <article>{{blog.content | snippet}}</article>
          </div>
 
    </div>
@@ -28,9 +28,16 @@ export default {
 
     },
     created(){
-        this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
-            this.blogs = data.body.slice(0,10);
-        }) 
+        this.$http.get('https://net-ninja-vue-project-default-rtdb.firebaseio.com/posts.json').then(function(data){
+            return data.json();
+        }).then(function(data){  //this is pomise and to get id we need to cycle through the object and return a id
+            var blogsArray=[];
+            for(let key in data){
+                data[key].id = key;
+                blogsArray.push(data[key]);
+            }
+            this.blogs=blogsArray;
+        })
     },
     computed:{
         
