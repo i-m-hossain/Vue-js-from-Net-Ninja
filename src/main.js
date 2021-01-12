@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: Routes,
-  mode: 'history'
+  mode: 'history',  //This mode removes the '*' option from route link
 
 });
 
